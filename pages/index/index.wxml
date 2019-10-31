@@ -1,0 +1,26 @@
+<!-- index.wxml -->
+<!-- 组件显示 -->
+<view hidden="{{currentTab == 0? false: true}}">
+  <component_home />
+</view>
+<view hidden="{{currentTab == 1? false: true}}">
+  <component_task />
+</view>
+<view hidden="{{currentTab == 3? false: true}}">
+  <component_message id="message"/>
+</view>
+<view hidden="{{currentTab == 4? false: true}}">
+  <component_mine />
+</view>
+<view class="getuserinfo-box" wx:if="{{showMask && currentTab != 4}}">
+  <button type="primary" plain="{{true}}" class="getuserinfo" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+</view>
+<!-- tabBar -->
+<view class='tab-bar'>
+  <view wx:for="{{list}}" wx:key="index" class="action {{index == 2 ? 'scan' : ''}}" data-current="{{index}}" bindtap="swichNav">
+    <view class="bar-img">
+      <image mode='scaleToFill' src="{{currentTab == index ? item.selectedIconPath : item.iconPath}}"></image>
+    </view>
+    <text class="{{currentTab == index ? 'select' : ''}}">{{item.text}}</text>
+  </view>
+</view>

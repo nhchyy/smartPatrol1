@@ -1,0 +1,11 @@
+<!-- pages/plan/history/list/index.wxml -->
+<van-cell-group>
+    <van-cell wx:for="{{planList}}" wx:key="index" title="{{item.point_name+'-'+item.number}}" label="{{item.type === 0 ? '计划任务-'+item.name : '计划外'}}" is-link border="{{ planList.length - 1 === index ? false : true }}" data-id='{{item.id}}' bind:click="toDetails">
+        <view wx:if="{{item.status === 0}}" slot="" style="color:#778a99">待巡检</view>
+        <view wx:if="{{item.status === 1}}" slot="" style="color:#149C24">正常</view>
+        <view wx:if="{{item.status === 2}}" slot="" style="color:#ee4266">漏检</view>
+        <view wx:if="{{item.status === 3}}" slot="" style="color:#ee4266">异常</view>
+        <view slot="time" class="time">巡检员：{{item.username}}</view>
+        <view slot="time" class="time">{{item.report_time}}</view>
+    </van-cell>
+</van-cell-group>

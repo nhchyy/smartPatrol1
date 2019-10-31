@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#335fda",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f6f6f6",
+  "usingComponents": {
+    "component_home": "/component/view/home/home",
+    "component_task": "/component/view/task/task",
+    "component_message": "/component/view/message/message",
+    "component_mine": "/component/view/mine/mine"
+  }
+}

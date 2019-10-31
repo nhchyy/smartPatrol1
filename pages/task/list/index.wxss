@@ -1,0 +1,4 @@
+/* pages/task/list/index.wxss */
+.call{
+    align-items: center;
+}

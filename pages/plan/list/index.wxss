@@ -1,0 +1,42 @@
+/* pages/plan/list/index.wxss */
+.page {
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.plan {
+    width: 100%;
+}
+.plan_list {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2rpx 8rpx 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10rpx;
+    margin-bottom: 30rpx;
+}
+.progress {
+}
+.info {
+    margin-left: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 412rpx;
+}
+.title {
+    width: 100%;
+    font-size: 32rpx;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.p {
+    width: 100%;
+    font-size: 26rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

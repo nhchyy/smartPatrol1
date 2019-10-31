@@ -1,0 +1,20 @@
+<!-- pages/plan/list/index.wxml -->
+<view class="page">
+    <view class="plan">
+        <view class="plan_list" wx:for="{{planList}}" wx:key="index" data-id="{{item.id}}" bindtap="toDetails">
+            <view class="progress">
+                <progress all='{{item.total}}' completed='{{item.ok}}' />
+            </view>
+            <view class='info'>
+                <view class="title">{{item.name}}</view>
+                <view class="p">任务编号：{{item.str}}</view>
+                <view class="p">开始时间：{{item.strtime}}</view>
+                <view class="p">计划巡检：{{item.total}}</view>
+                <view class="p">已完成：{{item.ok}}</view>
+            </view>
+            <view class="arrow">
+                <van-icon name="arrow" />
+            </view>
+        </view>
+    </view>
+</view>

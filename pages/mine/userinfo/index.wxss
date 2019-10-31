@@ -1,0 +1,14 @@
+/* pages/mine/userinfo/index.wxss */
+
+.btn {
+  width: 70%;
+  position: absolute;
+  bottom: 50rpx;
+  left: 15%;
+  font-size: 30rpx;
+  line-height: 2.8;
+  text-align: center;
+  background-color: #335fda;
+  color: #fff;
+  border-radius: 8rpx;
+}

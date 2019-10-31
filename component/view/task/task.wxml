@@ -1,0 +1,12 @@
+<!-- component/view/task/task.wxml -->
+<view class="task">
+    <view class="task-list">
+        <view class="task-item" wx:for="{{taskList}}" wx:key="index" data-id="{{index}}" bindtap="toTaskList">
+            <view class="progress">
+                <progress all="{{all}}" completed="{{item.completed}}" color="{{item.color}}" type="1"></progress>
+            </view>
+            <view class="task-title">{{item.title}}</view>
+        </view>
+    </view>
+    <view class="all">共{{all}}个任务</view>
+</view>

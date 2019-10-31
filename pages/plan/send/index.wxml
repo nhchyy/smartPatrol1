@@ -1,0 +1,103 @@
+<!-- pages/plan/send/index.wxml -->
+<view class="page">
+    <van-popup show="{{ popup_show }}" bind:close="switchPopup">
+        <view class="popup">
+            <view class="popup-text">请在设置中授权定位权限</view>
+            <view class="popup-btn">
+                <van-button type="default" size="small" open-type="openSetting">打开设置</van-button>
+            </view>
+        </view>
+    </van-popup>
+    <van-action-sheet title="请选择巡检计划" show="{{ action_show }}" actions="{{ info.line_name }}" cancel-text="取消" bind:select="actionSelect" bind:close="switchAction" />
+    <van-cell-group>
+        <van-cell title="巡检点编号" value="{{info.number}}" />
+        <van-cell title="巡检点名称" value="{{info.name}}" />
+        <van-cell title="距巡检点" value="{{distanceText}}" />
+        <van-cell title="巡检计划" value="{{info.desc}}" value="{{line.name}}" border="{{ false }}" bind:click="switchAction" is-link />
+    </van-cell-group>
+    <view class="box">
+        <view class="title">巡检项</view>
+        <view class="photograph">
+            <view class="plan_item" wx:for="{{info.item_list}}" wx:key="index">
+                <view class="item_name">{{item.name}}</view>
+                <view class="item_radio">
+                    <van-radio-group custom-class="group" value="{{ item.select }}" data-num="{{index}}" bind:change="statusChange">
+                        <van-radio name="1">正常</van-radio>
+                        <van-radio name="0">异常</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="title">检验说明</view>
+        <view class="photograph">
+            <view class="content">{{info.content}}</view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="title">拍照</view>
+        <view class="photograph">
+            <van-row>
+                <van-col span="8">
+                    <view class="take_photo" bindtap="takePhoto">
+                        <van-icon name="photograph" size="52rpx" />
+                    </view>
+                </van-col>
+                <van-col span="8" wx:for="{{photoPaths}}" wx:key="index">
+                    <view class="take_photo">
+                        <image mode="scaleToFill" src="{{item.url}}"></image>
+                        <view class="delete-img" data-index="{{index}}" bindtap="deletePhoto">
+                            <van-icon name="delete" size="40rpx" color="#f44" />
+                        </view>
+                    </view>
+                </van-col>
+            </van-row>
+        </view>
+    </view>
+    <view class="box">
+        <view class="title">录音</view>
+        <view class="photograph">
+            <view class="record" wx:if="{{!onRecorder}}" hidden="{{endRecorder}}" bindtap="startRecord">
+                <van-icon name="play-circle" size="52rpx" />
+            </view>
+            <view class="record" wx:if="{{onRecorder}}" bindtap="stopRecord">
+                <van-icon name="pause-circle" size="52rpx" />
+            </view>
+            <view class="record" wx:if="{{endRecorder}}">
+                <view class="play-record">
+                    <view hidden="{{onPlayRecord}}">
+                        <van-icon name="play-circle" bindtap="playRecord" size="52rpx" />
+                    </view>
+                    <view hidden="{{!onPlayRecord}}">
+                        <van-icon name="pause-circle" bindtap="endRecord" size="52rpx" />
+                    </view>
+                </view>
+                <view class="remove-record">
+                    <van-button type="danger" size="small" bindtap="removeRecord">重新录制</van-button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="title">录像</view>
+        <view class="photograph">
+            <view class="record" bindtap="chooseVideo" hidden="{{videoPaths}}">
+                <van-icon name="live" size="52rpx" />
+            </view>
+            <view class="video" wx:if="{{videoPaths}}">
+                <video class="video-play" src="{{videoPaths.url}}" controls></video>
+            </view>
+            <view class="remove-video" wx:if="{{videoPaths}}">
+                <van-button type="danger" size="small" bindtap="removeVideo">重新录制</van-button>
+            </view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="title">检验备注</view>
+        <view class="photograph">
+            <textarea class="textarea" value="{{textarea}}" placeholder-class="placeholder" bindblur="bindTextAreaBlur" auto-height placeholder="请填写检验说明" />
+        </view>
+    </view>
+    <view class="btn" bindtap="clickExecutionPlan">提交</view>
+</view>

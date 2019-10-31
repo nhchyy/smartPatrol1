@@ -1,0 +1,4 @@
+<!-- pages/task/list/index.wxml -->
+<van-cell-group>
+    <van-cell custom-class="call" wx:for="{{taskList}}" wx:key="index" title="{{item.title}}" label="{{item.desc}}" border="{{ taskList.length - 1 === index ? false : true }}" is-link url="{{'/pages/task/details/index?id=' + item.id}}"/>
+</van-cell-group>

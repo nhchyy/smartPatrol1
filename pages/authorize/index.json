@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#335fda",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f6f6f6",
+  "usingComponents": {
+    "van-loading": "/miniprogram_npm/vant-weapp/loading/index"
+  }
+}

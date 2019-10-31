@@ -1,0 +1,33 @@
+<!-- pages/plan/list_details/index.wxml -->
+<!-- 头部 -->
+<view class="head" wx:if="{{planList}}">
+    <view class="title">{{planList.name}}</view>
+    <view class="info">
+        <view class="time">
+            <view class="hour">{{planList.str}}</view>
+            <view class="day">今天</view>
+        </view>
+        <view class="infos">
+            <view class="info-text">计划巡检：{{planList.total}}</view>
+            <view class="info-text">已经完成：{{planList.ok}}</view>
+            <view class="info-text">尚未巡检：{{planList.wait}}</view>
+            <view class="info-text">不合格数：{{planList.nopass}}</view>
+        </view>
+    </view>
+</view>
+<!-- 计划列表 -->
+<view class="plan" wx:if="{{planList}}">
+    <van-cell-group border="{{ false }}" hidden="{{planList.execute.length === 0}}">
+        <van-cell wx:for="{{planList.execute}}" wx:key="index" border="{{ planList.execute.length - 1 === index ? false : true }}" title="{{item.name || '暂无名称'}}" label="编号：{{item.id}}" is-link data-id='{{item.id}}' bind:click="toDetails">
+            <view wx:if="{{item.status === 0}}" slot="" style="color:#778a99">待巡检</view>
+            <view wx:if="{{item.status === 1}}" slot="" style="color:#149C24">正常</view>
+            <view wx:if="{{item.status === 2}}" slot="" style="color:#ee4266">漏检</view>
+            <view wx:if="{{item.status === 3}}" slot="" style="color:#ee4266">异常</view>
+        </van-cell>
+    </van-cell-group>
+    <view class="nodata" wx:if="{{planList.execute.length === 0}}">暂无任务</view>
+</view>
+<!-- 扫码按钮 -->
+<view class="scan" wx:if="{{planList && showScan}}" bindtap="scan">
+    <van-icon custom-class="scan-icon" size="50rpx" name="scan" />
+</view>

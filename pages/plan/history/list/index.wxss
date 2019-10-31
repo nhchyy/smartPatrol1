@@ -1,0 +1,12 @@
+/* pages/plan/history/list/index.wxss */
+.van-cell{
+    align-items: center;
+}
+
+.time{
+    margin-top:3rpx;
+font-size:24rpx;
+line-height:36rpx;
+color:#999;
+
+}

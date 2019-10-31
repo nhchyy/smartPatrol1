@@ -1,0 +1,13 @@
+<!-- component/view/mine/mine.wxml -->
+<view class='head'>
+  <view class='active'>
+    <image src="{{info ? info.avatarUrl : '/assets/tab-bar-icon/my_h.png'}}"></image>
+  </view>
+  <button wx:if="{{!info}}" type="primary" plain="{{true}}" class="getuserinfo" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+    点击显示微信头像
+  </button>
+  <view class='name' wx:if="{{info}}">{{info.nickName}}</view>
+</view>
+<view class="nav">
+  <van-cell title="个人信息管理" icon="manager-o" is-link bind:click="toPage" />
+</view>

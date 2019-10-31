@@ -1,0 +1,15 @@
+/* pages/message/details/index.wxss */
+page {
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.title {
+    font-size: 35rpx;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content {
+    font-size: 26rpx;
+    line-height: 2;
+}

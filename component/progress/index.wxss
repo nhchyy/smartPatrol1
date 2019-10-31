@@ -1,0 +1,23 @@
+/* component/progress/index.wxss */
+.circle-box {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.draw_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35rpx;
+    color: #335fda;
+    font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<!-- component/view/home/home.wxml -->
+<view class='head'>
+  <view class='head-item'>
+    <view class='head-box'>
+      <view class='item'>计划执行</view>
+      <view class='item'>
+        <text class='number'>{{plan.today}}次</text>
+        今日
+      </view>
+      <view class='item'>已完成{{plan.ok}}次</view>
+      <view class='item'>
+        <view class='btn' data-url="/pages/plan/list/index" bindtap="toPage">查看</view>
+      </view>
+    </view>
+  </view>
+  <view class='head-item'>
+    <view class='head-box'>
+      <view class='item'>巡检日历</view>
+      <view class='item'>
+        <view class='btn' data-url="/pages/plan/calendar/index" bindtap="toPage">查看</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='ad'>
+  <image mode='scaleToFill' src='/assets/image/bg.png'></image>
+</view>
+<view class='welcome'>
+  <view class='welcome-left'>
+    <view class='welcome-img'>
+      <image mode='scaleToFill' src='/assets/image/1.png'></image>
+    </view>
+    <view class='welcome-text'>欢迎使用</view>
+  </view>
+  <view class='welcome-right'>
+    <view class='right-box'><text class="right-text">{{welcome}}</text></view>
+  </view>
+</view>

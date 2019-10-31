@@ -1,0 +1,9 @@
+<!-- pages/task/complete/index.wxml -->
+<van-cell-group>
+    <van-cell title="任务状态" value="{{value}}" is-link bind:click="switchAction" />
+</van-cell-group>
+<view class="textarea" hidden="{{true}}">
+    <textarea class="textareas" auto-height placeholder="请填写任务备注" />
+</view>
+<van-action-sheet show="{{ showAction }}" actions="{{ actions }}" cancel-text="取消" bind:select="onSelect" bind:cancel="onSelect" bind:close="switchAction" />
+<view class="btn" bindtap="clickSendBtn">提交</view>

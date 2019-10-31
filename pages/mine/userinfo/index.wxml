@@ -1,0 +1,8 @@
+<!-- pages/mine/userinfo/index.wxml -->
+<van-cell-group wx:if="{{info}}">
+  <van-field placeholder="请输入姓名" value="{{info.name}}" label="姓名" left-icon="contact" data-name="name" bind:change="changeValue" />
+  <van-field placeholder="请输入手机号" value="{{info.tel}}" type="number" label="手机号" left-icon="phone-o" data-name="tel" bind:change="changeValue" border="{{ false }}" />
+</van-cell-group>
+<view class="btn" wx:if="{{info}}" bindtap="clickPostBtn" loading="{{loading}}" loading-text="提交中...">
+  提交
+</view>

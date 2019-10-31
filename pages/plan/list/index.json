@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#335fda",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "计划执行",
+    "backgroundColor": "#f6f6f6",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "progress": "/component/progress/index",
+        "van-icon": "/miniprogram_npm/vant-weapp/icon/index"
+    }
+}

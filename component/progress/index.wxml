@@ -1,0 +1,9 @@
+<!-- component/progress/index.wxml -->
+<view class="progress">
+    <view class="circle-box">
+        <canvas class="circle" style="z-index: -99; width:100px; height:100px;" canvas-id="canvasCircle"></canvas>
+        <canvas class="circle" style="width:100px; height:100px;" canvas-id="canvasArcCir"></canvas>
+        <view class="draw_btn" wx:if="{{type === 0}}" style="color:{{color}}">{{percentage}}%</view>
+        <view class="draw_btn" wx:else style="color:{{color}}">{{completed}}</view>
+    </view>
+</view>

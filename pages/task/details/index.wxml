@@ -1,0 +1,12 @@
+<!-- pages/task/details/index.wxml -->
+<van-cell-group>
+    <van-cell title="任务标题" value="{{info.title}}" />
+    <van-cell title="执行人" value="{{info.executor}}" />
+    <van-cell title="状态" value="{{info.status === 3 ? '已取消' : (info.status === 0 ? '进行中' : '已完成')}}" />
+    <van-cell title="发起时间" value="{{info.add_time}}" />
+    <van-cell title="要求完成时间" value="{{info.asktime}}" />
+    <van-cell title="任务内容" value="{{info.desc}}" border="{{ false }}" />
+</van-cell-group>
+<view class="btn" wx:if="{{info.status === 0}}" data-id="{{info.id}}" bindtap="toComplete">
+    执行任务
+</view>

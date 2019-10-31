@@ -1,0 +1,10 @@
+<!-- pages/plan/calendar/index.wxml -->
+<view class="calendar">
+    <calendar is="calendar" calendar="{{calendar}}"></calendar>
+</view>
+<view class="bar">
+    <view wx:for="{{tips}}" wx:key="index" class="tips">
+        <view class="text">{{item.text}}</view>
+        <view class="num" style="background-color: {{item.color}};">{{item.num}}</view>
+    </view>
+</view>

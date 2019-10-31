@@ -1,0 +1,13 @@
+<!-- pages/plan/plan_details/index.wxml -->
+<van-cell-group>
+    <van-cell title="巡检点名称" value="{{planInfo.point_name}}" />
+    <van-cell title="巡检点编号" value="{{planInfo.number}}" />
+    <van-cell title="检查项目" value="{{planInfo.item_name}}" />
+    <van-cell title="巡检点类型" value="{{planInfo.type}}" />
+    <van-cell title="巡检路线" value="{{planInfo.address}}" />
+    <van-cell title="地理定位" wx:if="{{planInfo.point_lng && planInfo.point_lat}}" data-address="{{planInfo.address}}" data-lng="{{planInfo.point_lng}}" data-lat="{{planInfo.point_lat}}" bind:click="openLocation">
+        <van-icon slot="right-icon" name="location-o"/>
+    </van-cell>
+    <van-cell title="拍照数量" value="{{planInfo.photo_num}}" />
+    <van-cell title="备注说明" value="{{planInfo.desc}}" border="{{ false }}" />
+</van-cell-group>

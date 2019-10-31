@@ -1,0 +1,107 @@
+/**index.wxss**/
+
+page {
+    background-color: #f6f6f6;
+}
+
+/* 导航栏 */
+
+.tab-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1024;
+    background-color: #fff;
+    height: 127rpx;
+}
+
+.getuserinfo-box {
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0);
+    height: calc(100vh - 127rpx);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.getuserinfo {
+    width: 100vw;
+    height: calc(100vh - 127rpx);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-left: 30rpx;
+    font-size: 35rpx !important;
+    line-height: 1.5 !important;
+    color: #fff !important;
+    border: none !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.action {
+    flex: 1;
+    display: block;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+    line-height: 1;
+    margin: 0;
+    background-color: inherit;
+    overflow: initial;
+    font-size: 24rpx;
+    color: #b2bcc7;
+}
+
+.bar-img {
+    width: 56rpx;
+    height: 56rpx;
+    margin: 0 auto 12rpx;
+}
+
+.bar-img image {
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.action.scan {
+    position: relative;
+    z-index: 2;
+}
+
+.action.scan image {
+    position: absolute;
+    width: 86rpx;
+    z-index: 2;
+    height: 86rpx;
+    border-radius: 50%;
+    line-height: 86rpx;
+    font-size: 50rpx;
+    top: -35rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0;
+}
+
+.select {
+    color: #2f9bfe;
+}
+
+.getuserinfo {
+    z-index: 999;
+    margin-left: 30rpx;
+    font-size: 35rpx !important;
+    line-height: 1.5 !important;
+    color: #fff !important;
+    border: none !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}

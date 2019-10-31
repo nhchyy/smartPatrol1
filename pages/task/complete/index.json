@@ -1,0 +1,12 @@
+{
+    "navigationBarBackgroundColor": "#335fda",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "执行任务",
+    "backgroundColor": "#f6f6f6",
+    "usingComponents": {
+        "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+        "van-field": "/miniprogram_npm/vant-weapp/field/index",
+        "van-action-sheet": "/miniprogram_npm/vant-weapp/action-sheet/index"
+    }
+}

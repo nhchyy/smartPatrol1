@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/authorize/index",
+    "pages/index/index",
+    "pages/plan/list/index",
+    "pages/plan/calendar/index",
+    "pages/plan/send/index",
+    "pages/task/complete/index",
+    "pages/task/details/index",
+    "pages/task/list/index",
+    "pages/mine/userinfo/index",
+    "pages/plan/list_details/index",
+    "pages/plan/plan_details/index",
+    "pages/message/details/index",
+    "pages/plan/history/list/index",
+    "pages/plan/history/details/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#335fda",
+    "navigationBarTitleText": "巡检",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

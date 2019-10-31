@@ -1,0 +1,3 @@
+<!-- pages/message/details/index.wxml -->
+<view class="title">{{info.title}}</view>
+<view class="content">{{info.content}}</view>

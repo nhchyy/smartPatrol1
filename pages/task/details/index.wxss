@@ -1,0 +1,11 @@
+/* pages/task/details/index.wxss */
+.btn{
+    width: 70%;
+    margin: 40rpx auto;
+    font-size: 30rpx;
+    line-height: 2.8;
+    text-align: center;
+    background-color: #335fda;
+    color: #fff;
+    border-radius: 8rpx;
+}

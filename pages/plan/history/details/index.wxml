@@ -1,0 +1,77 @@
+<!-- pages/plan/history/details/index.wxml -->
+<van-cell-group>
+    <van-cell title="巡检点编号" value="{{planInfo.number}}" />
+    <van-cell title="巡检点名称" value="{{planInfo.point_name}}" />
+    <van-cell title="完成时间" value="{{planInfo.report_time}}" />
+    <van-cell wx:if="{{planInfo.distance}}" title="距巡检点" value="{{planInfo.distance}}米" />
+    <van-cell wx:else title="距巡检点" value="暂无间距数据" />
+    <van-cell title="巡检计划" value="{{planInfo.plan_name}}" />
+    <van-cell title="巡检备注" value="{{planInfo.desc}}" />
+    <van-cell title="巡检结果" border="{{ false }}">
+        <view wx:if="{{planInfo.status === 0}}" slot="" style="color:#778a99">待巡检</view>
+        <view wx:if="{{planInfo.status === 1}}" slot="" style="color:#149C24">正常</view>
+        <view wx:if="{{planInfo.status === 2}}" slot="" style="color:#ee4266">漏检</view>
+        <view wx:if="{{planInfo.status === 3}}" slot="" style="color:#ee4266">异常</view>
+    </van-cell>
+</van-cell-group>
+<view class="box">
+    <view class="title">巡检项</view>
+    <view class="photograph">
+        <view wx:if="{{planInfo.data}}">
+            <van-cell-group wx:for="{{planInfo.data}}" wx:key="index" border="{{ false }}">
+                <van-cell title="{{item}}" border="{{ planInfo.data.length - 1 === index ? false : true }}">
+                    <view slot="" wx:if="{{planInfo.check_result.split(',')[index]=== 0}}" style="color:#ee4266">
+                        异常
+                    </view>
+                    <view slot="" wx:else style="color:#149C24">正常</view>
+                </van-cell>
+            </van-cell-group>
+        </view>
+        <view class="no-data" wx:else>暂无巡检项</view>
+    </view>
+</view>
+<view class="box">
+    <view class="title">巡检图片</view>
+    <view class="photograph">
+        <van-row wx:if="{{photoPaths}}">
+            <van-col span="8" wx:for="{{photoPaths}}" wx:key="index">
+                <view class="take_photo">
+                    <image mode="scaleToFill" src="{{server}}{{item}}"></image>
+                </view>
+            </van-col>
+        </van-row>
+        <view class="no-data" wx:else>暂无巡检录像</view>
+    </view>
+</view>
+<view class="box">
+    <view class="title">巡检录音</view>
+    <view class="photograph">
+        <view class="record" wx:if="{{planInfo.mp4}}">
+            <view class="play-record">
+                <view hidden="{{onPlayRecord}}">
+                    <van-icon name="play-circle" bindtap="playRecord" size="52rpx" />
+                </view>
+                <view hidden="{{!onPlayRecord}}">
+                    <van-icon name="pause-circle" bindtap="endRecord" size="52rpx" />
+                </view>
+            </view>
+        </view>
+        <view class="no-data" wx:else>暂无巡检录音</view>
+    </view>
+</view>
+<view class="box">
+    <view class="title">巡检录像</view>
+    <view class="photograph">
+        <view class="video" wx:if="{{planInfo.video}}">
+            <video class="video-play" src="{{server}}{{planInfo.video}}" controls></video>
+        </view>
+        <view class="no-data" wx:else>暂无巡检录像</view>
+    </view>
+</view>
+<view class="box">
+    <view class="title">检验备注</view>
+    <view class="photograph">
+        <view class="desc" wx:if="{{planInfo.description}}">{{planInfo.description}}</view>
+        <view class="no-data" wx:else>暂无检验备注</view>
+    </view>
+</view>

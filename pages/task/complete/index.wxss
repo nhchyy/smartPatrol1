@@ -1,0 +1,27 @@
+/* pages/task/complete/index.wxss */
+.textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+
+.textareas{
+    width: 100%;
+    font-size: 30rpx;
+    min-height: 200rpx;
+    border: 1rpx solid #dedede;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    padding: 10rpx;
+}
+
+.btn{
+    width: 70%;
+    margin: 20rpx auto;
+    font-size: 30rpx;
+    line-height: 2.8;
+    text-align: center;
+    background-color: #335fda;
+    color: #fff;
+    border-radius: 8rpx;
+}

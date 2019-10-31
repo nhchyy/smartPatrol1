@@ -1,0 +1,48 @@
+/* component/view/mine/mine.wxss */
+
+.head {
+    width: 100%;
+    height: 220rpx;
+    box-sizing: border-box;
+    padding: 30rpx;
+    background-color: #335fda;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.active {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5rpx solid #fff;
+    background-color: #fefefe;
+    box-shadow: 0 1rpx 2rpx rgba(150, 150, 150, 0.3);
+}
+
+.active image {
+    width: 100%;
+    height: 100%;
+}
+
+.name {
+    font-size: 35rpx;
+    color: #fff;
+    margin-left: 30rpx;
+    font-weight: bold;
+}
+
+.nav {
+    margin-top: 20rpx;
+}
+.getuserinfo {
+    z-index: 999;
+    margin-left: 30rpx;
+    font-size: 35rpx !important;
+    line-height: 1.5 !important;
+    color: #fff !important;
+    border: none !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}

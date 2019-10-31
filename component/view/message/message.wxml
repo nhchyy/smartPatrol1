@@ -1,0 +1,4 @@
+<!-- component/view/message/message.wxml -->
+<van-cell-group>
+    <van-cell wx:for="{{msgList}}" wx:key="index" title="{{item.title}}" value="{{item.add_time}}" label="{{item.content}}" data-id="{{item.id}}" bind:click="toPage" border="{{ msgList.length - 1 === index ? false : true }}" is-link />
+</van-cell-group>
